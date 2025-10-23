@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Layout HTML Basic</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+		#container {
+			display: grid;
+			grid-template-areas:
+			'h h h'
+			'm m m'
+			'l c r'
+			'f f f';
+			grid-template-columns: 300px 900px 300px;
+			grid-template-rows: 120px 40px 530px 80px;
+			grid-gap: 3px;
+		}
+		.site {
+			display: grid;
+			grid-template:
+			"h h h h h" 130px
+			"m m m m m" 40px
+			"l c c c r" 350px
+			"l c2 c2 c2 r" 250px
+			"f f f f f" 120px
+			/1fr 1fr 1fr 1fr 1fr;
+			grid-gap: 3px;
+		}
+		.header {
+		  grid-area: h;
+		  background-color: #df008C;
+		  display:flex;
+		}
+		.menu-bar {
+		  grid-area: m;
+		  background-color: #923FFB;
+		}	
+		.content {
+		  grid-area: c;
+		  background-color: #B26FDB;
+		}	
+		.content2 {
+		  grid-area: c2;
+		  background-color: #B26FDB;
+		}			
+		.leftside {
+		  grid-area: l;
+		  background-color: #20CBA4;
+		}
+		.rightside {
+		  grid-area: r;
+		  background-color: #a0CB04;		  
+		}
+		.footer {
+		  grid-area: f;
+		  background-color: #004D40;
+		}
+		
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+.menu li {
+  float: left;
+}
+.menu li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 8px 30px;
+  text-decoration: none;
+  font-size: 20px;
+}
+.menu li a:hover {
+  background-color: #19FB3D;
+  color: red;
+  transition: 1.5s;	
+}
+	li {
+		font-size: 18px;
+		font-family: Tahoma;
+		font-weight: bold;
+	}
+	.banner {
+		width:1500px;
+		height:130px;		
+	}	
+	.quangcao {
+		width:240px;
+		height:120px;
+	}
+	.slideshow {
+	  overflow: hidden;
+	  height: 350px;
+	  width: 600px;
+	  margin: 0 auto;
+	}
+	.slide-wrapper {
+	  width: 2400px;
+	  -webkit-animation: slide 8s ease infinite;
+	}
+	.slide {
+	  float: left;
+	  height: 350px;
+	  width: 600px;
+	  display: flex;
+	}
+	@-webkit-keyframes slide {
+	  20% {margin-left: 0px;}
+	  40% {margin-left: -600px;}
+	  60% {margin-left: -1200px;}
+	  80% {margin-left: -1800px;}
+	}
+.card {
+  margin: 5px;
+  float: left;
+  width: 290px;
+  text-align: center;
+}
+.hinh {
+  width: 240px;
+  height: 140px;
+  transition: 1s;  
+}
+.hinh:hover {
+  transform: perspective(300px) rotateX(45deg);
+}
+		</style>
+    </head>
+    <body>
+        <div class="site">
+			<div class="header"><img src="logo-btc.png" width="130px" height="130px"> <img src="banner-web-2.jpg" class="banner"></div>
+			<div class="menu-bar">
+				<div class="menu">	
+				  <ul>
+					<li><a href="#">Trang chủ</a></li>
+					<li><a href="#">Thời sự</a></li>
+					<li><a href="#e">Thế giới</a></li>
+					<li><a href="#">Thể thao</a></li>
+					<li><a href="#">Du lịch</a></li>
+					<li><a href="#">Khoa học</a></li>
+					<li><a href="#">Giáo dục</a></li>
+				  </ul>
+				</div>
+			</div>
+			<div class="leftside">
+			<ul>
+				<li><a href="#">Công nghệ mới</a></li><br>
+				<li><a href="#">Lập trình</a></li><br>
+				<li><a href="#">Kho dữ liệu</a></li><br>
+				<li><a href="#">Khóa học trực tuyến</a></li><br>
+				<li><a href="#">Kiến thức xã hội</a></li><br>
+				<li><a href="#">Kỹ năng nghề nghiệp</a></li><br>
+				<li><a href="#">Dự án thực tập</a></li><br>
+				<li><a href="#">Giới trẻ</a></li><br>
+				<li><a href="#">Việc làm</a></li><br>
+			</ul>
+			</div>
+			<div class="content">
+				<div class="slideshow">
+				  <div class="slide-wrapper">
+					<div class="slide"><img src="slide-1.jpg"></div>
+					<div class="slide"><img src="slide-2.jpg"></div>
+					<div class="slide"><img src="slide-3.jpg"></div>
+					<div class="slide"><img src="slide-4.jpg"></div>
+				  </div>
+				</div>
+			</div>
+			<div class="content2">
+				<div class="card">
+				<img src="image/html.png" class="hinh">
+				<h3>Ngôn ngữ HTML là một trong các loại ngôn ngữ được sử dụng trong xây dựng web</h3>
+				</div>
+				<div class="card">
+				<img src="image/css.png" class="hinh">
+				<h3>CSS là kỹ thuật định dạng lại các phần tử được tạo ra bởi các ngôn ngữ HTML</h3>
+				</div>
+				<div class="card">
+				<img src="image/javascript.png" class="hinh">
+				<h3>JavaScript là ngôn ngữ lập trình web được tích hợp giúp website sống động hơn</h3>
+				</div>
+			</div>
+			<div class="rightside">
+				<marquee direction="up">
+				<img src="Image/web-1.jpg" class="quangcao"><br>
+				<img src="Image/web-2.jpg" class="quangcao"><br>
+				<img src="Image/web-3.jpg" class="quangcao"><br>
+				<img src="Image/web-4.jpg" class="quangcao"><br>
+				</marquee>
+			</div>
+			<div class="footer"></div>
+		</div>
+    </body>
+</html>
